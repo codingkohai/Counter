@@ -2,19 +2,24 @@
 // listen for clicks on the increment button
 
 // document.getElementById("count").innerHTML = 5
+let saveEl = document.getElementById("save-el")
 let countEl = document.getElementById("count-el")
 
-console.log(countEl)
 
 let count = 0;
 
 function increment() {
-    count = count + 1;
-    console.log(count);
+    count += 1; // += is the same as count = count + 1 -- it's just short hand
+    countEl.textContent = count
 }
 
 
 // DOM = Document Object Model
 function save() {  
-    console.log(count)
+    let countStr = count + " - "
+    saveEl.innerText += countStr
+    countEl.textContent = 0
+    count = 0
 }
+
+
